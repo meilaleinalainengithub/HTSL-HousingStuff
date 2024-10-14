@@ -1,0 +1,52 @@
+// Claim Daily Reward
+
+if (stat "DailyClaimed" == placeholder %date.day/[EST]%) {
+
+} else {
+    stat "DailyClaimed" = placeholder %date.day/[EST]%
+    stat "DailyColor" = 8
+    stat " " += 1
+}
+
+closeMenu
+
+// Daily's
+if (stat "Daily1" == 4, stat "ClaimedDay1" == 0) {
+    stat "DailyComp" += 1
+    stat "Money" += 20
+    stat "SocialSkill" += 25
+
+    stat "ClaimedDay1" = 1
+} else {
+    chat "&l[&4&lERR&f&l] &f&lYou need to complete the quest first!"
+}
+
+if (stat "Daily2" == 4, stat "ClaimedDay2" == 0) {
+    stat "DailyComp" += 1
+    stat "Money" += 15
+    stat "SocialSkill" += 50
+
+    stat "ClaimedDay2" = 1
+} else {
+    chat "&l[&4&lERR&f&l] &f&lYou need to complete the quest first!"
+}
+
+if (stat "Daily3" == 4, stat "ClaimedDay3" == 0) {
+    stat "DailyComp" += 1
+    stat "Money" += 20
+    stat "SocialSkill" += 25
+
+    stat "ClaimedDay3" = 1
+} else {
+    chat "&l[&4&lERR&f&l] &f&lYou need to complete the quest first!"
+}
+
+if (stat "Daily4" == 4, stat "ClaimedDay4" == 0) {
+    stat "DailyComp" += 1
+    stat "Money" += 20
+    stat "SocialSkill" += 50
+
+    stat "ClaimedDay4" = 1
+} else {
+    chat "&l[&4&lERR&f&l] &f&lYou need to complete the quest first!"
+}

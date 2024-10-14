@@ -1,0 +1,21 @@
+if (stat "RodOut" == 1) {
+    stat "RodOut" = 0
+} else {
+    // ItemChance = 2 or 20
+    stat "ItemChance" = 2
+    stat "RandomRod" = placeholder %random.int/<1> <1000>%
+
+    if (stat "RandomRod" <= stat "ItemChance") {
+        title "&cLava Drop!" "&5Rare Drop!" 1 2 1
+        sound "Successful Hit" 0.7 1 "invokers_location"
+
+        stat "WhatItem" = placeholder %random.int/<1> <2>%
+        if (stat "WhatItem" == 1) {
+            // give special item
+        } 
+        if (stat "WhatItem" == 2) {
+            // give special item
+        }
+    }
+
+}

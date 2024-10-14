@@ -1,0 +1,21 @@
+goto event "Player Join"
+
+if (stat "DailyClaimed" == placeholder %date.day/[EST]%) {
+    stat "DailyColor" = 8
+} else {
+    stat "DailyColor" = 6
+
+    stat "Daily1" = 2
+    stat "DailyKills" = 0
+    stat "ClaimedDay1" = 0
+
+    stat "Daily2" = 2
+    stat "DailyFish" = 0
+    stat "ClaimedDay2" = 0
+
+    stat "Daily3" = 2
+    stat "ClaimedDay3" = 0
+
+    stat "Daily4" = 2
+    stat "ClaimedDay4" = 0
+}

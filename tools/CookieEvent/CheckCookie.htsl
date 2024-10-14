@@ -1,0 +1,18 @@
+goto function "AnnounceCookie"
+title "&6&lCOOKIE GIVEN!" "&aA &6&lcookie &awas given!" 1 2 1
+
+// YOU NEED TO SET THIS TO AUTOMATIC EXECUTION = 20T
+goto function "CheckCookies"
+
+if (placeholder %house.cookies% > globalstat "currentCookies") {
+    globalstat "cookiesGiven" = 1
+}
+
+if (hasItem "CookieEvent\CustomCookie" metadata Hand anyAmount, globalstat "cookiesGiven" == 1) {
+    chat "&aThank &lyou &afor giving us your &6&lcookie!"
+    globalstat "cookiesGiven" = 0
+    function "AnnounceCookie" true 
+    globalstat "currentCookies" = placeholder %house.cookies%
+}
+
+// FINISHED

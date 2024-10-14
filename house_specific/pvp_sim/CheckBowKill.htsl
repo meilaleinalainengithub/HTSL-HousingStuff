@@ -1,0 +1,5 @@
+goto event "Player Kill"
+
+if (hasItem "Items/RegularBow" metadata Hand anyAmount) {
+    giveItem "Items/Arrows" true "First Slot" false
+}

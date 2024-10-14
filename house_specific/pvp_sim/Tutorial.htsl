@@ -1,0 +1,40 @@
+goto function "Tutorial"
+
+if (stat "NewPlayer" == 0) {
+    title "&lWelcome" "&aPlease look at chat." 1 4 1
+    chat "Welcome to &a&lMLL's &6PvP Sim!"
+    pause "60"
+    chat "Hold the &4Red Wool &fto skip the tutorial."
+    applyLayout "Tutorial"
+    pause 80
+} else {
+    exit
+}
+
+if (hasItem "Items/RedWool" metadata Hand anyAmount) {
+    exit
+}
+
+chat "Great! Here at &6PvP Sim&f, we have different zones."
+pause "60"
+tp "custom_coordinates" "-7 135 15"
+title "&4Volcano" "&cLava PvP" 1 3 1
+pause "80"
+tp "custom_coordinates" "-7 135 7"
+title "&3Glacier" "&bIce PvP" 1 3 1
+pause "80"
+tp "custom_coordinates" "1 135 7"
+title "&2Village" "&aShops & Simulator" 1 3 1
+pause "80"
+tp "custom_coordinates" "1 135 16"
+title "&6Event" "&eEvents Irregularly" 1 3 1
+pause "80"
+tp "house_spawn"
+chat "You make &2money &ffor &4kills &fand passively by being in the house."
+pause "60"
+chat "You can increase your &amoney per kill &fby using &l/shop&f."
+pause "40"
+chat "Right Click the &4Red Wool &fto avoid future tutorials."    
+
+goto event "Player Join"
+function "Tutorial" false

@@ -1,0 +1,17 @@
+goto event "Player Kill"
+
+stat "Killstreak" += 1
+
+if (stat "DailyKills" == 5, stat "Daily1" == 2) {
+    stat "Daily1" = 4
+    chat "&a&lYou can now claim &6&lDaily Quest 1!"
+} else {   
+    stat "DailyKills" += 1
+}
+
+if (stat "Killstreak" == 5, stat "Daily3" == 2) {
+    stat "Daily3" = 4
+}
+
+goto event "Player Death"
+stat "Killstreak" = 0

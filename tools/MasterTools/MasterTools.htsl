@@ -1,0 +1,27 @@
+goto function "MasterTools: Small Funcs"
+
+if (globalstat "MasterTools/FuncNum" == 1) {
+    // run code for that func
+}
+
+goto function "MasterTools: Alert Staff"
+if (hasGroup("Mod") true) {
+     chat "%stat.global/PlayerName% : %stat.global/PlayerId%"
+}
+
+goto function "MasterTools: Check"
+if (globalstat "MasterTools/Start" == 1) {
+    function "MasterTools: Small Funcs" false
+} else {
+    pause "40"
+    function "MasterTools: Check" false
+}
+
+goto event "Player Join"    
+globalstat "PlayerName" = placeholder %player.name%
+globalstat "PlayerId" = placeholder %stat.player/Id%
+function "MasterTools: Alert Staff" true
+
+function "MasterTools: Check" false 
+
+// FINSIEHD IF %stat.player/x/z% WORKS

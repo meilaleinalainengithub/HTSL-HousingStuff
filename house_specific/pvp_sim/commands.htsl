@@ -1,0 +1,92 @@
+goto command "sumo"
+function "WaitForTP" false
+pause 70
+if (stat "CanTP" == 1) {
+    tp "custom_coordinates" "-3 96 19"
+    stat "CanTP" = 0
+}
+
+goto command "stuck"
+function "WaitForTP" false
+pause 70
+if (stat "CanTP" == 1) {
+    tp "house_spawn"
+    stat "CanTP" = 0
+}
+
+goto command "info"
+function "WaitForTP" false
+pause 70
+if (stat "CanTP" == 1) {
+    tp "custom_coordinates" "-37 113 53"
+    stat "CanTP" = 0
+}
+
+goto command "parkoor"
+function "WaitForTP" false
+pause 70
+if (stat "CanTP" == 1) {
+    tp "custom_coordinates" "45 184 -36"
+}
+
+goto command "/nvn"
+applyPotion "Night Vision" 2592000 10 false
+
+goto command "/potclear"
+clearEffects
+
+goto command "hrules"
+chat "&4&l%house.name%"
+chat "&0 "
+chat "&4No homophobia, transphobia, racism, etc."
+chat "&4No cheating/hacking/abusing bugs."
+chat "&4No harrassment or bullying other players. (spawn camping counts too)"
+chat "&4Follow &lall Hypixel rules."
+chat "&4No shit excuses for getting punished by staff."
+chat "&4No shit talking if you get shat on yourself."
+chat "&4Don't abuse no pvp zones."
+
+goto command "cmds"
+chat "&4&l%house.name%"
+chat "&0 "
+chat "&7/cmds - Shows this message"
+chat "&7/sumo - TP to sumo"
+chat "&7/info - TP to info room"
+chat "&7/stuck - TP to spawn"
+chat "&7/hrules - Shows house rules"
+chat "&7/nvn - Grants you night vision"
+chat "&7/parkoor - TP to parkour"
+chat "&7/hafk - [FOR STAFF] Toggles AFK"
+
+goto command "staffrules"
+if (hasGroup "Builder" true) {
+    tp "custom_coordinates" "-49 184 52"
+}
+
+goto function "ChangeToRank"
+if (stat "Rank" == 1) {
+    changePlayerGroup "Fren" false
+}
+
+if (stat "Rank" == 2) {
+    changePlayerGroup "Builder" false
+}
+
+if (stat "Rank" == 3) {
+    changePlayerGroup "Mod" false
+}
+
+goto command "hafk"
+if or (hasGroup "Slowchat" false, hasGroup "Bad" false, hasGroup "Player" false) {
+    exit
+}
+
+stat "Rank" = placeholder %player.group.priority%
+
+if (stat "IsAFK" == 0) {
+    stat "IsAFK" = 1
+    changePlayerGroup "AFK" false
+} else {
+    stat "IsAFK" = 0
+    function "ChangeToRank" false
+}

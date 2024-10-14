@@ -1,0 +1,5 @@
+goto event "Player Join"
+applyPotion "Resistance" 2592000 3 true
+
+goto event "Player Death"
+applyPotion "Resistance" 2592000 3 true

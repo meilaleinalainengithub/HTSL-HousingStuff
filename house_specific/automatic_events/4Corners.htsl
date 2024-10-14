@@ -1,0 +1,28 @@
+goto function "4 Corners: Start"
+
+title "&6Starting &14 &cCo&arn&eer&0s" "&aGet ready!" 2 3 2
+pause "40"
+
+title "&25" "" 1 1 1
+pause "20"
+title "&a4" "" 1 1 1
+pause "20"
+title "&e3" "" 1 1 1
+pause "20" 
+title "&62" "" 1 1 1
+pause "20"
+title "&41" "" 1 1 1
+pause "20"
+title "&00" "" 1 1 1
+pause "20"
+
+title "&cChoosing Corner..." "&aGood luck!" 2 3 2
+globalstat "Corner" = placeholder %random.int/1 4%
+random {
+    function "4 Corners: PvP" true
+    function "4 Corners: Just Die lol" true
+    function "4 Corners: Dropper" true
+    function "4 Corners: Player Vote" true
+    function "4 Corners: KB Sticks" true
+    function "4 Corners: Player Boss" true
+}

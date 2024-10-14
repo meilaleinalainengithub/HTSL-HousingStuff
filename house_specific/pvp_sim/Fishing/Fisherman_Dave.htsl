@@ -1,0 +1,45 @@
+goto npc "&3Fisherman Dave"
+
+if (stat "LavaFishing" == 0) {
+    chat "&a[NPC] &3Fisherman Dave: &fOh. Hello player!"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fI'm &3Fisherman Dave. &fThe best &cLava Fisher &fout there!"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fYou know, you kinda remind me of my young self."
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fYes... same fishing spirit!"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fI have a spare fishing rod from before &lI upgraded."
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fHere, take it. Maybe you'll even get to my level someday."
+    giveItem "Items\LavaRod1.json" false "First Slot" false
+    stat "LavaFishing" = 1
+}
+
+if (stat "LavaFishing" == 1, stat "FishingLevel" == 3) {
+    chat "&a[NPC] &3Fisherman Dave: &fOh. Hello again player!"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fYou're &3&lFishing Level 3?"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fWe'll I'm shocked, good job player!"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fHere, let me level up your fishing rod for you."
+    removeItem "Items\LavaRod1"
+    pause 20
+    giveItem "Items\LavaRod2" false "First Slot" false
+    stat "LavaFishing" = 2
+}
+
+if (stat "LavaFishing" == 2, stat "FishingLevel" == 10) {
+    chat "&a[NPC] &3Fisherman Dave: &fOh. Hello again player!"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fYou're already &3&lFishing Level 310?"
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fWe'll I'm proud of you, you might just become the next best &cLava Fisher."
+    pause 20
+    chat "&a[NPC] &3Fisherman Dave: &fHere, let me level up your fishing rod for you, you'll start needing it now."
+    removeItem "LavaRod2"
+    pause 20
+    giveItem "Items\LavaRod3" false "First Slot" false
+    stat "Items\LavaFishing" = 3
+}

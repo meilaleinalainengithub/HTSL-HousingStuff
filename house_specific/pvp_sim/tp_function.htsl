@@ -1,0 +1,24 @@
+goto function "WaitForTP"
+
+stat "HealthBTP" = health
+stat "CoordsBTPX" = locX
+stat "CoordsBTPY" = locY
+stat "PlayerMaxHP" = maxHealth
+
+title "&f&lStand Still!" "&a&lWaiting to &4&lteleport." 1 2 1
+pause 60
+
+if (placeholder %player.location.x% == stat "CoordsBTPX", placeholder %player.location.y% == stat "CoordsBTPY") {
+    
+} else {
+    chat "&4&l[ERR] &f&lTeleport failed."
+    exit
+}
+
+if (stat "HealthBTP" < stat "PlayerMaxHP") {
+    chat "&4&l[ERR] &f&lTeleport failed."
+} else {
+    stat "CanTP" = 1
+}
+
+// FINISHED

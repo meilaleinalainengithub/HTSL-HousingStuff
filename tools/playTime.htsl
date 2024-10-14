@@ -1,0 +1,62 @@
+goto function "PlaytimeH"
+
+stat "PlaytimeH" = stat "TotalPlaytime"
+stat "PlaytimeH" //= 3600
+
+stat "PlaytimeHC" = stat "CurrentPlaytime"
+stat "PlaytimeHC" //= 3600
+// PlaytimeH
+
+goto function "PlaytimeM2"
+
+stat "RemainingSecondC" = stat "SeshPlaytime"
+stat "PlaytimeHTC" = stat "PlaytimeHC"
+stat "PlaytimeHTC" *= 3600
+stat "RemainingSecondC" -= stat "PlaytimeHTC"
+
+stat "PlaytimeMC" = stat "RemainingSecondC"
+stat "PlaytimeMC" //= 60
+// PlaytimeM2
+
+goto function "PlaytimeM"
+
+stat "RemainingSeconds" = stat "TotalPlaytime"
+stat "PlaytimeHT" = stat "PlaytimeH"
+stat "PlaytimeHT" *= 3600
+stat "RemainingSeconds" -= stat "PlaytimeHT"
+
+stat "PlaytimeM" = stat "RemainingSeconds"
+stat "PlaytimeM" //= 60
+
+function "PlaytimeM2" false
+// PlaytimeM
+
+goto function "PlaytimeS"
+
+stat "PlaytimeMT" = stat "PlaytimeM"
+stat "PlaytimeMT" *= 60 
+stat "PlaytimeS" = stat "RemainingSeconds"
+stat "PlaytimeS" -= stat "PlaytimeMT"
+
+stat "PlaytimeMTC" = stat "PlaytimeMC"
+stat "PlaytimeMTC" *= 60 
+stat "PlaytimeSC" = stat "RemainingSecondC"
+stat "PlaytimeSC" -= stat "PlaytimeMTC"
+// PlaytimeS
+
+goto function "PlaytimeCalc"
+
+stat "Playtime" += 1
+stat "SeshPlaytime" += 1
+//stat "currentM" = stat "PlaytimeM" // IF YOU WANT TO ADD: EVERY MIN = 1 PTP
+stat "TotalPlaytime" = stat "Playtime"
+stat "CurrentPlaytime" = stat "SeshPlaytime"
+
+function "PlaytimeH" false
+function "PlaytimeM" false
+function "PlaytimeS" false
+
+goto event "Player Quit"
+stat "SeshPlaytime" = 0
+
+// MIGHT BE FINISHED IF %stat.player/x/z% DOESN'T WORK

@@ -1,0 +1,6 @@
+goto event "Fish Caught"
+stat "DailyFish" += 1
+
+if (stat "DailyFish" == 10, stat "Daily2" == 2) {
+    stat "Daily2" = 4
+}

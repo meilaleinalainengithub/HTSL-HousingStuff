@@ -1,0 +1,22 @@
+&l[&4Ｎ&6Ｅ&3Ｗ&f&l] &6ＰｖＰ Ｓｉｍ
+&l[&4ＺＯ&6Ｎ&3ＥＳ&f&l] &6ＰｖＰ Ｓｉｍ
+
+npcs to-do:
+TiesKey - 4 Quests:
+x: yz
+
+depressed santa - Choose to stab TiesKey w/ special weapon from more depressed santa.
+more depressed santa - Kill paul for his trust -> kill 10 players -> get stabby knife to kill TiesKey.
+Guard - Get personal entry from TiesKey or MLL _OR_ Combat Skill 20.
+Servant - If stab TiesKey: get banned from dungeon.
+paul - Kill him for more depressed santa.
+
+Bell Operator - Get "Wrench" from Mod+ -> 1 free daily mystery box.
+Natt - x -> Armor shop.
+_odr - Get signatures from npcs -> Rank/xp booster shop.
+Man - Get weapons -> Weapon shop.
+Pennywise - Kill/Get body parts.
+Mysterious Man - Do parkour jumps -> Potion shop.
+
+Fisherwoman Nicole
+Fisherman Dave
