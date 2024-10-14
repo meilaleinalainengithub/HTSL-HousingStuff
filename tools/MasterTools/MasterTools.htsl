@@ -23,5 +23,3 @@ globalstat "PlayerId" = placeholder %stat.player/Id%
 function "MasterTools: Alert Staff" true
 
 function "MasterTools: Check" false 
-
-// FINSIEHD IF %stat.player/x/z% WORKS
